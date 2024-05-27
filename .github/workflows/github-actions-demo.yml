@@ -16,3 +16,17 @@ jobs:
         run: ./my-script.sh
       - name: Run another script
         run: ./my-other-script.sh
+  example-job-two:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
+    steps:
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-log-file
+          path: output.log     
