@@ -18,9 +18,6 @@ jobs:
         run: ./my-other-script.sh
   example-job-two:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./scripts
     steps:
       - shell: bash
         run: |
