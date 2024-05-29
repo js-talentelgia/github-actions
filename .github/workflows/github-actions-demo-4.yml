@@ -9,7 +9,7 @@ jobs:
     name: 'Test'
     # You can use configuration variables with the `vars` context for dynamic jobs
     if: ${{ vars.USE_VARIABLES == 'true' }}
-    runs-on: ${{ vars.RUNNER }}
+    runs-on: 'ubuntu-latest'
     environment: ${{ vars.ENVIRONMENT_STAGE }}
     steps:
     - name: Use variables
