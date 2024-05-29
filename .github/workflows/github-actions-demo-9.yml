@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deploying build ${{ needs.build.outputs.build_id }}"
+      - run: exit 1        
   debug:
     needs: [build, deploy]
     runs-on: ubuntu-latest
